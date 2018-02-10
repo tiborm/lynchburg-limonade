@@ -3,6 +3,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "experimentalDecorators": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -120,13 +121,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "lily",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "lyli",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
