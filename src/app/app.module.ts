@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
-import { CompsModule } from './components/components.module';
+import { ComponentsModule } from './components';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { CompsModule } from './components/components.module';
     FormsModule,
     HttpModule, HttpClientModule,
     NgbModule.forRoot(),
-    CompsModule
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
