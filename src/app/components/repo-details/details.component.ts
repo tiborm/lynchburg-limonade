@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
+import { Repo } from '../../models/repo';
 
 @Component({
   selector: 'lyli-repo-details',
@@ -8,6 +8,10 @@ import { Observable } from 'rxjs/Observable';
 })
 export class RepoDetailsComponent {
 
-  @Input() repoId: string;
+  model: Repo;
+
+  show(repo: Repo ) {
+    this.model = repo;
+  }
 
 }

@@ -8,4 +8,5 @@ export interface Repo {
   forks_count: number;
   open_issues_count: number;
   score: number;
+  description: string;
 }
