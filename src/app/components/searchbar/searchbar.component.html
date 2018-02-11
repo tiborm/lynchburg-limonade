@@ -1,7 +1,12 @@
 <div class="form-group container-fluid bg-light mb-5">
   <div class="p-3 form-inline">
     <label for="typeahead-http" class="text-info">Search for a Git repository:</label>
-    <input id="typeahead-http" type="text" class="form-control ml-2 mr-2" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngModelOptions]="{standalone: true}" [ngbTypeahead]="search" placeholder="repo-name" />
+    <input id="typeahead-http" type="text" class="form-control ml-2 mr-2" 
+        [class.is-invalid]="searchFailed" 
+        [(ngModel)]="model" 
+        [ngbTypeahead]="search"
+        (selectItem)="onItemSelected($event)" 
+        placeholder="repo-name" />
     <span *ngIf="searching" class="text-muted">Searching...</span>
     <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
   </div>

@@ -6,9 +6,11 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { RepoDetailsComponent } from './repo-details/details.component';
 
 export const COMPONENTS = [
   SearchbarComponent,
+  RepoDetailsComponent,
 ];
 
 @NgModule({

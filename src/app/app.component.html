@@ -1,6 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<lyli-searchbar></lyli-searchbar>
+<lyli-searchbar (result)="onSearchResultChanged($event)"></lyli-searchbar>
 <div style="text-align:center">
   <h4 class="text-info">{{ title }}</h4>
   <h6 class="text-muted">{{ subTitle }}</h6>
 </div>
+<lyli-repo-details [repoId]="repoId"></lyli-repo-details>

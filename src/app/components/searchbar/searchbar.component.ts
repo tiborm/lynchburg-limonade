@@ -2,6 +2,7 @@ import { Component, Output, Injectable, Input, EventEmitter } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTypeahead, NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -20,7 +21,13 @@ export class SearchbarComponent {
   searchFailed = false;
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
 
+  @Output() result = new EventEmitter<String>();
+
   constructor(private _service: GitRepoService) {}
+
+  onItemSelected(event: NgbTypeaheadSelectItemEvent) {
+    this.result.emit(event.item);
+  }
 
   search = (text$: Observable<string>) =>
     text$
