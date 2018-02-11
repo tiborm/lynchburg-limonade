@@ -8,10 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Lynchburg Limonade';
   subTitle = 'Wish I could use Angular more often...';
-
-  repoId = '';
-
-  onSearchResultChanged(repoId: string) {
-    this.repoId = repoId;
-  }
 }

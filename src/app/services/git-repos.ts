@@ -30,7 +30,22 @@ const PARAMS = new HttpParams({
 
 @Injectable()
 export class GitRepoService {
+
+  private _lastResponse: GitResponse;
+
   constructor(private http: HttpClient) {}
+
+  /**
+   * Returns with the full object representation of the selected
+   * user/repo id pair (aka full_name).
+   * This is already queried by the typeahead so lets just use it.
+   *
+   * @param fullName: string
+   */
+  public getSelectedItem(fullName: string): Repo {
+    // wish I could be brave enough to use find...
+    return <Repo> this._lastResponse.items.filter(repo => repo.full_name === fullName)[0];
+  }
 
   search(term: string) {
     if (term === '') {
@@ -40,6 +55,7 @@ export class GitRepoService {
     return this.http
       .get(API, {params: PARAMS.set('q', term)})
       .map((response: GitResponse) => {
+        this._lastResponse = response;
         return response.items
           .map((repo: Repo) => repo.full_name)
           .slice(0, RESULT_LIMIT);

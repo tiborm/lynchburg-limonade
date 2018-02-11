@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 import { GitRepoService } from '../../services/git-repos';
+import { Repo } from '../../models/repo';
 
 @Component({
   selector: 'lyli-searchbar',
@@ -20,13 +21,15 @@ export class SearchbarComponent {
   searching = false;
   searchFailed = false;
   hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
+  searchComplete = false;
 
-  @Output() result = new EventEmitter<String>();
+  @Output() result = new EventEmitter<Repo>();
 
   constructor(private _service: GitRepoService) {}
 
   onItemSelected(event: NgbTypeaheadSelectItemEvent) {
-    this.result.emit(event.item);
+    this.searchComplete = true;
+    this.result.emit(this._service.getSelectedItem(event.item));
   }
 
   search = (text$: Observable<string>) =>
