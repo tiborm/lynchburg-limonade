@@ -2,9 +2,11 @@
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run this repo locally you will need to have node.js and npm installed on your computer.
+Please run npm install first.
+Run `ng serve  --open` for a dev server.
 
 ## Running unit tests
 
-I added a few very basic tests just for demo purpuse.
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A few very basic tests added.
+Run `ng test` to execute the unit tests.
