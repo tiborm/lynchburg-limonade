@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lynchburg Limonade';
-  subTitle = 'Wish I could use Angular more often...';
+  subTitle = 'Search for any git repo like Vue, Angular whatever...';
 }
