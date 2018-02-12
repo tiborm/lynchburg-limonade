@@ -12,11 +12,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/merge';
 
+import { GitResponse } from '../models/git-response';
 import { Repo } from '../models/repo';
-
-interface GitResponse {
-  items: Array<any>;
-}
 
 const RESULT_LIMIT = 14;
 const API = 'https://api.github.com/search/repositories';
