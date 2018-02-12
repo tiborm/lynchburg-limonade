@@ -29,7 +29,7 @@ export class SearchbarComponent {
 
   onItemSelected(event: NgbTypeaheadSelectItemEvent) {
     this.searchComplete = true;
-    this.result.emit(this._service.getSelectedItem(event.item));
+    this.result.emit(this._service.getItem(event.item));
   }
 
   search = (text$: Observable<string>) =>

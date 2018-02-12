@@ -34,9 +34,9 @@ export class GitRepoService {
    * user/repo id pair (aka full_name).
    * This is already queried by the typeahead so lets just use it.
    *
-   * @param fullName: string
+   * @param fullName: string user/repo id pair (aka full_name)
    */
-  public getSelectedItem(fullName: string): Repo {
+  public getItem(fullName: string): Repo {
     // wish I could be brave enough to use find...
     return <Repo> this._lastResponse.items.filter(repo => repo.full_name === fullName)[0];
   }
