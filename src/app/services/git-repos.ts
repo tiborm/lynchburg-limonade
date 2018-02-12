@@ -20,13 +20,7 @@ interface GitResponse {
 
 const RESULT_LIMIT = 14;
 const API = 'https://api.github.com/search/repositories';
-const PARAMS = new HttpParams({
-  fromObject: {
-    action: 'opensearch',
-    format: 'json',
-    origin: '*'
-  }
-});
+const params = new HttpParams();
 
 @Injectable()
 export class GitRepoService {
@@ -53,7 +47,7 @@ export class GitRepoService {
     }
 
     return this.http
-      .get(API, {params: PARAMS.set('q', term)})
+      .get(API, {params: params.set('q', term)})
       .map((response: GitResponse) => {
         this._lastResponse = response;
         return response.items
