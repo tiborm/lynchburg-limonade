@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 
 import { RepoDetailsComponent } from './details.component';
 import { MetricComponent } from './metric.component';
-import { IssuesComponent } from './issues.component';
 
 import { Repo } from '../../models/repo';
 
@@ -43,7 +42,6 @@ describe('RepoDetailsComponent', () => {
       declarations: [
         RepoDetailsComponent,
         MetricComponent,
-        IssuesStubComponent,
       ],
     }).compileComponents();
 
@@ -51,12 +49,8 @@ describe('RepoDetailsComponent', () => {
     detailsView = fixture.debugElement.componentInstance;
   }));
 
-  it('should have a show function', async(() => {
-    expect(typeof detailsView.show).toBe('function');
-  }));
-
   it('should visualize full_name of the given repository', async(() => {
-    detailsView.show(MOCK_RESPONSE);
+    detailsView.model = MOCK_RESPONSE;
     fixture.detectChanges();
 
     const compiled = fixture.debugElement.nativeElement;
