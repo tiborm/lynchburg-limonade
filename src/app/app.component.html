@@ -1,6 +1,9 @@
-<lyli-searchbar #searchBar (result)="details.show($event)"></lyli-searchbar>
+<lyli-searchbar #searchBar (result)="model = $event"></lyli-searchbar>
 <div style="text-align:center" *ngIf="!searchBar.searchComplete">
   <h4 class="text-info">{{ title }}<small class="text-warning"> (assesment task)</small></h4>
   <h6 class="text-muted">{{ subTitle }}</h6>
 </div>
-<lyli-repo-details #details></lyli-repo-details>
+<div *ngIf="searchBar.searchComplete">
+  <lyli-repo-details [model]="model"></lyli-repo-details>
+  <lyli-issues class="card box-shadow w-75 mt-4 mb-4 mx-auto" [repoId]="model.full_name"></lyli-issues>
+</div>

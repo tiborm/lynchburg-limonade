@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Repo } from '../../models/repo';
 
@@ -7,10 +7,5 @@ import { Repo } from '../../models/repo';
   templateUrl: './details.component.html',
 })
 export class RepoDetailsComponent {
-
-  model: Repo;
-
-  show(repo: Repo ) {
-    this.model = repo;
-  }
+  @Input() model: Repo;
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Repo } from './models/repo';
+
 @Component({
   selector: 'lyli-root',
   templateUrl: './app.component.html',
@@ -8,4 +10,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Lynchburg Limonade';
   subTitle = 'Search for any git repo like Vue, Angular whatever...';
+
+  model: Repo;
 }
