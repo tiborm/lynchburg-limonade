@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-info">Open issues
+    <span *ngIf="searching" class="text-muted"> - Getting items...</span>
+  </li>
+  <li *ngFor="let issue of issues" class="list-group-item">
+    <h6><a href="{{ issue.html_url }}">{{ issue.title }}</a></h6>
+    <small class="text-muted">
+      <span class="text-info">#{{ issue.number }}</span>
+      reported by {{ issue.user.login }},
+      {{ issue.comments }} comments,
+      score: {{ issue.score }}
+    </small>
+  </li>
+</ul>

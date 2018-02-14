@@ -13,5 +13,4 @@ export class RepoDetailsComponent {
   show(repo: Repo ) {
     this.model = repo;
   }
-
 }

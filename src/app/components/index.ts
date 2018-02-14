@@ -5,9 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SearchbarComponent } from './searchbar/searchbar.component';
-import { RepoDetailsComponent } from './repo-details/details.component';
-import { MetricComponent } from './repo-details/metric.component';
-import { IssuesComponent } from './repo-details/issues.component';
+import { RepoDetailsComponent } from './details/details.component';
+import { MetricComponent } from './details/metric.component';
+import { IssuesComponent } from './issues/issues.component';
 
 export const COMPONENTS = [
   SearchbarComponent,
