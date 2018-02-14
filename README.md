@@ -4,7 +4,7 @@
 
 To run this repo locally you will need to have node.js and npm installed on your computer.
 Please run npm install first.
-Run `ng serve  --open` for a dev server.
+Run `npm start --open` or `ng serve --open` for a dev server.
 
 ## Running unit tests
 
